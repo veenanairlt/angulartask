@@ -1,0 +1,2 @@
+# angulartask
+Simple Angular Application
