@@ -1,0 +1,19 @@
+.app-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.app-content {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,14 @@
+<!-- app.component.html -->
+<mat-toolbar color="primary">
+
+  @if (auth.isAuthenticated()) {
+    <span class="spacer"></span>
+    <button mat-button (click)="dashboardRedirect()">Dashboard</button>
+    <button mat-button (click)="logout()">Logout</button>
+  }
+</mat-toolbar>
+
+<!-- Main page view -->
+<div class="app-content">
+  <router-outlet></router-outlet>
+</div>

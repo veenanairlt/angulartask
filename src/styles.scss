@@ -1,0 +1,12 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #fceefc;  /* light pink background */
+}
+.error-snackbar {
+  background: #e53935 !important; /* red */
+  color: white !important;
+  text-align: center;
+  font-weight: 500;
+}

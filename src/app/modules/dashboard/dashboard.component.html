@@ -1,0 +1,18 @@
+<div class="dashboard-wrapper">
+  <h1 class="dashboard-title">Dashboard</h1>
+
+  <mat-card class="welcome-card mat-elevation-z2">
+    <div class="welcome-content">
+      <mat-icon class="welcome-icon" color="primary">home</mat-icon>
+      <div>
+        <h2 class="welcome-heading">Welcome, {{ auth.userEmail() }}!</h2>
+        <p class="welcome-subtext">
+          Organize your work and imporve performance!!!
+        </p>
+        <button mat-raised-button color="accent" (click)="goItems()">
+          <b>Go to Items</b>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>

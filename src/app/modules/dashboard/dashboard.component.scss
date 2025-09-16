@@ -1,0 +1,43 @@
+.dashboard-wrapper {
+  background: #f8faff; 
+  min-height: 48vh;
+  padding: 2rem;
+}
+
+.dashboard-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.welcome-card {
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  max-width: 500px;
+}
+
+.welcome-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.welcome-icon {
+  font-size: 40px;
+  color: #5b86e5; /* accent icon */
+  margin-top: 5px;
+}
+
+.welcome-heading {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.welcome-subtext {
+  margin: 0 0 1rem 0;
+  color: #555;
+  font-size: 0.95rem;
+}
