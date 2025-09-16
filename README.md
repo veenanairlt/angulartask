@@ -87,6 +87,6 @@ Visit /login → log in using mock credentials.
 
 Redirects to /dashboard.
 
-Navigate to /items to view API‑backed list.
+Navigate to /list to view API‑backed list.
 
 Logout returns you to login page.
