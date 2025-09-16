@@ -13,7 +13,6 @@ describe('AuthInterceptor', () => {
     TestBed.configureTestingModule({
       providers: [
         CookieService,
-        // ✅ Register HttpClient AND our interceptor with the functional API
         provideHttpClient(withInterceptors([AuthInterceptor])),
         provideHttpClientTesting(),
       ]
@@ -23,7 +22,7 @@ describe('AuthInterceptor', () => {
     httpCtrl = TestBed.inject(HttpTestingController);
   });
 
-  it('should attach token header', () => {
+  it('should attach token header when cookie present', () => {
     const cookie = TestBed.inject(CookieService);
     cookie.set('token', '123');
 
@@ -31,5 +30,15 @@ describe('AuthInterceptor', () => {
 
     const req = httpCtrl.expectOne('/api/test');
     expect(req.request.headers.get('Authorization')).toBe('Bearer 123');
+  });
+
+  it('should not attach Authorization when no token', () => {
+    const cookie = TestBed.inject(CookieService);
+    cookie.delete('token');
+
+    http.get('/api/test').subscribe();
+
+    const req = httpCtrl.expectOne('/api/test');
+    expect(req.request.headers.has('Authorization')).toBeFalse();
   });
 });

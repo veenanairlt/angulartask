@@ -9,36 +9,39 @@ describe('AuthService', () => {
   let http: HttpTestingController;
   let cookies: CookieService;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        AuthService,
-        CookieService,
-        provideHttpClient(),
-        provideHttpClientTesting()
-      ]
-    });
-    service = TestBed.inject(AuthService);
-    http = TestBed.inject(HttpTestingController);
-    cookies = TestBed.inject(CookieService);
+ beforeEach(() => {
+  TestBed.configureTestingModule({
+    providers: [
+      AuthService,
+      CookieService,
+      provideHttpClient(),
+      provideHttpClientTesting()
+    ]
   });
 
-  it('should login and set cookies', () => {
+  service = TestBed.inject(AuthService);
+  http = TestBed.inject(HttpTestingController);
+  cookies = TestBed.inject(CookieService);
+});
+
+  it('should login and set cookies + signal', () => {
     service.login('test@example.com', 'password').subscribe();
 
     const req = http.expectOne('/api/login');
-    req.flush({ token: 'mock', user: { email: 'test@example.com' } });
+    req.flush({ token: 'mock-token', user: { email: 'test@example.com' } });
 
+    // ✅ cookies are set
     expect(service.isAuthenticated()).toBeTrue();
+    expect(cookies.get('token')).toBe('mock-token');
     expect(service.userEmail()).toBe('test@example.com');
-    expect(cookies.get('token')).toBe('mock');
   });
 
-  it('should logout and clear cookies', () => {
-    cookies.set('token', 'dummy');
+  it('should logout and clear cookies + reset signals', () => {
+    cookies.set('token', 'fake');
     service.logout();
 
     expect(service.isAuthenticated()).toBeFalse();
+    expect(service.getToken()).toBeNull();
     expect(service.userEmail()).toBeNull();
   });
 });

@@ -3,17 +3,17 @@ import { listStore } from './list.store';
 import { provideHttpClient } from '@angular/common/http';
 import { provideHttpClientTesting, HttpTestingController } from '@angular/common/http/testing';
 
-describe('listStore', () => {
+describe('ListStore', () => {
   let store: listStore;
   let http: HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        listStore,
+        listStore,                     // ✅ use correct class
         provideHttpClient(),
-        provideHttpClientTesting()
-      ]
+        provideHttpClientTesting(),
+      ],
     });
 
     store = TestBed.inject(listStore);
@@ -27,7 +27,7 @@ describe('listStore', () => {
     req.flush([{ id: 1, name: 'Test', description: 'Desc' }]);
 
     expect(store.items().length).toBe(1);
-    expect(store.error()).toBeNull();
+    expect(store.error()).toBeNull();   // ✅ items loaded, error cleared
   });
 
   it('should handle error case', () => {
@@ -36,7 +36,7 @@ describe('listStore', () => {
     const req = http.expectOne('/api/items');
     req.error(new ErrorEvent('Network'));
 
-    expect(store.error()).toBe('Failed to load items');
+    expect(store.error()).toBe('Failed to load items'); // ✅ depends on your store code
     expect(store.items().length).toBe(0);
   });
 });

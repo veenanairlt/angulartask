@@ -1,15 +1,18 @@
 import { TestBed } from '@angular/core/testing';
-import { App } from './app'; 
+import { importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { App } from './app';
 
 describe('App', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [App],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [App], // ✅ standalone App component
       providers: [
-        provideRouter([])
+        importProvidersFrom(BrowserModule), // ✅ provide Browser services
+        provideRouter([])                   // ✅ provide routing
       ]
-    });
+    }).compileComponents();
   });
 
   it('should create the app', () => {

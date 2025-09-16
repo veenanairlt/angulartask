@@ -32,7 +32,6 @@ export class AuthService {
     return this.cookies.check('token');
   }
 
-  /** ✅ New helper method for interceptor */
   getToken(): string | null {
     return this.cookies.get('token') || null;
   }

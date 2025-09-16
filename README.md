@@ -69,9 +69,9 @@ cd angulartask
 
 npm install
 3. Run the Development Server
-ng serve
+npm run start
 
-App runs at: 👉 http://localhost:4200
+App runs at:  http://localhost:4200
 4. Default Credentials (for Mock API)
 
 

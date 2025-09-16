@@ -25,7 +25,6 @@
     "@angular/platform-browser": "^20.0.0",
     "@angular/platform-server": "^20.0.0",
     "@angular/router": "^20.0.0",
-    "@angular/ssr": "^20.0.3",
     "@ngrx/signals": "^20.0.1",
     "express": "^5.1.0",
     "ngx-cookie-service": "^20.1.0",
