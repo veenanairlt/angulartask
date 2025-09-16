@@ -35,7 +35,7 @@ This is a simple Angular 20 demo application showcasing:
   Spinner during API call, error handling if call fails
 
 
-Project Structure
+**Project Structure**
 
 
 src/app/
@@ -57,10 +57,9 @@ src/app/
   app.component.ts
 
 
- Setup Instructions
+ **Setup Instructions**
  
 1. Clone the Repository
-
 
 git clone https://github.com/veenanairlt/angulartask.git
 
@@ -80,10 +79,14 @@ App runs at:  http://localhost:4200
 
 
 Email: test@example.com
+
 Password: password
 
 
 Visit /login → log in using mock credentials.
+
 Redirects to /dashboard.
+
 Navigate to /items to view API‑backed list.
+
 Logout returns you to login page.
