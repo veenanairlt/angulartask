@@ -62,10 +62,10 @@ src/app/
 1. Clone the Repository
 
 
-git clone https://github.com/<your-username>/angular-task.git
-cd angular-task
+git clone https://github.com/veenanairlt/angulartask.git
+cd angulartask
 2. Install Dependencies
-Bash
+
 
 npm install
 3. Run the Development Server
@@ -78,9 +78,6 @@ App runs at: 👉 http://localhost:4200
 Email: test@example.com
 Password: password
 
-5. Run Unit Tests
-
-ng test
 
 Visit /login → log in using mock credentials.
 Redirects to /dashboard.
