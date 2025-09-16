@@ -63,15 +63,19 @@ src/app/
 
 
 git clone https://github.com/veenanairlt/angulartask.git
+
 cd angulartask
+
 2. Install Dependencies
 
-
 npm install
+
 3. Run the Development Server
+
 npm run start
 
 App runs at:  http://localhost:4200
+
 4. Default Credentials (for Mock API)
 
 
